@@ -1,6 +1,6 @@
 Name:		texlive-tiscreen
 Version:	62602
-Release:	1
+Release:	2
 Summary:	Mimic the screen of older Texas Instruments calculators
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tiscreen
