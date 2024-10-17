@@ -3,7 +3,7 @@ Version:	62602
 Release:	2
 Summary:	Mimic the screen of older Texas Instruments calculators
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tiscreen
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tiscreen
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tiscreen.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tiscreen.doc.r%{version}.tar.xz
