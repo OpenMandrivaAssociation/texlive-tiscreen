@@ -1,37 +1,21 @@
-Name:		texlive-tiscreen
-Version:	62602
-Release:	2
+%global tl_name tiscreen
+%global tl_revision 62602
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Mimic the screen of older Texas Instruments calculators
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tiscreen
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tiscreen.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tiscreen.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tiscreen.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tiscreen.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package mimics the screen of older Texas Instruments dot
-matrix display calculators, specifically the TI-82 STATS. It
-relies on the lcd and xcolor packages.
+This package mimics the screen of older Texas Instruments dot matrix
+display calculators, specifically the TI-82 STATS. It relies on the lcd
+and xcolor packages.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/tiscreen
-%doc %{_texmfdistdir}/doc/latex/tiscreen
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
